@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OAES 🚀</title>
+    <link rel="stylesheet" href="css/coursePage.css" />
+    <link rel="stylesheet" href =  https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css />
+    <link rel="stylesheet" href =  https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css />
+    <link rel="stylesheet" href =    https://fonts.googleapis.com/css?family=Roboto />
+    <style>
+        body {
+            background-image: url('images/background.jpg');
+            background-color : darkturquoise;
+            color: #ECF0F5;
+        }
+    </style>
+</head>
+<body onload="myFunction()">
+<div class="container" style="background-color:#1A2226;margin-top: 50px">
+    <h1>WELCOME EXAM ADMIN</h1>
+    <br>
+    <br>
+    <form>
+        <div class="col-lg-12 loginbttm">
+            <div class="col-lg-6 login-btm login-text">
+                <!-- Error Message -->
+            </div>
+            <div class="col-lg-6 login-btm login-button">
+                <button type="submit" class="btn btn-outline-primary" onclick="addExam()">ADD EXAM</button>
+            </div>
+            <br>
+            <div class="col-lg-6 login-btm login-button">
+                <button type="submit" class="btn btn-outline-primary" onclick="editExam()">EDIT EXAM</button>
+            </div>
+            <br>
+            <div class="col-lg-6 login-btm login-button">
+                <button type="submit" class="btn btn-outline-primary" onclick="viewExams()">VIEW ALL EXAMS</button>
+            </div>
+            <br>
+            <div class="col-lg-6 login-btm login-button">
+                <button type="submit" class="btn btn-outline-primary" onclick="viewExamsAsc()">VIEW ALL EXAMS ASC</button>
+            </div>
+            <br>
+            <div class="col-lg-6 login-btm login-button">
+                <button type="submit" class="btn btn-outline-primary" onclick="viewExamsDesc()">VIEW ALL EXAMS DESC</button>
+            </div>
+            <br>
+            <div class="col-lg-6 login-btm login-button">
+                <button type="submit" class="btn btn-outline-primary" onclick="viewExamsByCode()">VIEW EXAM BY CODE</button>
+            </div>
+            <br>
+            <div class="col-lg-6 login-btm login-button">
+                <button type="submit" class="btn btn-outline-primary" onclick="viewExamsByDate()">VIEW EXAM BY DATE</button>
+            </div>
+
+        </div>
+    </form>
+</div>
+<script src="javascript/main.js"></script>
+</body>
+</html>
