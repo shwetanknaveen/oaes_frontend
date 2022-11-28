@@ -56,14 +56,14 @@ function viewExamByCode(){
     let temp = JSON.parse(document.cookie);
     let code = temp.code;
     let obj = {
-        exam_code: code
+        examCode: code
     };
     // Send to Backend
-    fetch("http://localhost:8082/oaes_layer_war_exploded/api/exam/viewExamByCode", {
+    fetch("http://localhost:8091/getExams/"+code, {
         // Adding method type
-        method: "POST",
+        method: "GET",
         // Adding body or contents to send
-        body: JSON.stringify(obj),
+        // body: JSON.stringify(obj),
         // Adding headers to the request
         headers: {
             "Content-type": "application/json; charset=UTF-8",
@@ -78,8 +78,8 @@ function viewExamByCode(){
             let list = json;
             let array = [];
             for(let i=0;i<list.length;i++){
-                let dt = new Date(list[i].exam_date);
-                array.push(list[i].exam_code  + "  " + list[i].exam_name + "  " + dt.getDate()+"/"+dt.getMonth() +"/"+dt.getFullYear()+  "  " + list[i].start_time + "  " + list[i].end_time);
+                let dt = new Date(list[i].examDate);
+                array.push(list[i].examId+"  "+list[i].examCode  + "  " + list[i].examName + "  " + dt.getDate()+"/"+dt.getMonth() +"/"+dt.getFullYear()+  "  " + list[i].startTime + "  " + list[i].endTime);
             }
             let selectList = document.createElement("select");
             selectList.id = "prerequisites";
