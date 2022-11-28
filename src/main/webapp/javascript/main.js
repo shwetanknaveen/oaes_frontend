@@ -261,16 +261,16 @@ function addExamToDatabase() {
     let end = document.getElementById("end").value;
     let description = document.getElementById("description").value;
     let obj = {
-        exam_code: code,
-        exam_name: name,
-        exam_date: date,
-        start_time: start,
-        end_time: end,
-        exam_description: description,
+        examCode: code,
+        examName: name,
+        examDate: date,
+        startTime: start,
+        endTime: end,
+        examDescription: description,
     };
 
     // Send to Backend
-    fetch("http://localhost:8082/oaes_layer_war_exploded/api/exam/add", {
+    fetch("http://localhost:8090/addExam", {
         // Adding method type
         method: "POST",
         // Adding body or contents to send
@@ -308,7 +308,7 @@ function registerUser() {
         email: email,
     };
     // Send to Backend
-    fetch("http://localhost:8082/oaes_layer_war_exploded/api/user/register", {
+    fetch("http://localhost:8092/addUser", {
         // Adding method type
         method: "POST",
         // Adding body or contents to send
@@ -374,17 +374,17 @@ function editExamInDatabase() {
     let end = document.getElementById("end").value;
     let description = document.getElementById("description").value;
     let obj = {
-        exam_id : examid,
-        exam_code: code,
-        exam_name: name,
-        exam_date: date,
-        start_time: start,
-        end_time: end,
-        exam_description: description,
+        examId : examid,
+        examCode: code,
+        examName: name,
+        examDate: date,
+        startTime: start,
+        endTime: end,
+        examDescription: description,
     };
 
     // Send to Backend
-    fetch("http://localhost:8082/oaes_layer_war_exploded/api/exam/edit", {
+    fetch("http://localhost:8090/updateExam", {
         // Adding method type
         method: "POST",
         // Adding body or contents to send
