@@ -351,15 +351,9 @@ function loginUser() {
         },
     })
         // Converting to JSON
-        .then((response) => {
-            if(response.status == 200){
-                alert('Successfully Logged In !!')
-                location.href = 'homepage.html';
-                alert("Redirecting to Home Page");
-            }
-            else{
-                alert(response.status);
-            }
+        .then((response) => response.json())
+            .then(json=>{
+            alert(`email is ${json.email} and password is ${json.password}`)
         })
     alert("Your request is in processing....")
 }
