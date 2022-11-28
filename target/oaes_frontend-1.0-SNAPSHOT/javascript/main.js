@@ -351,14 +351,15 @@ function loginUser() {
         },
     })
         // Converting to JSON
-        .then((response) => {
-            if(response.status == 200){
-                alert('Successfully Logged In !!')
+        .then((response) => response.json())
+            .then(json=>{
+            if(json != null && json.email){
+                alert('Successfully Logged in the User !!')
                 location.href = 'homepage.html';
-                alert("Redirecting to Home Page");
+                alert('Redirecting to Homepage !!');
             }
             else{
-                alert(response.status);
+                alert("Bad Credentials");
             }
         })
     alert("Your request is in processing....")

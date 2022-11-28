@@ -353,7 +353,14 @@ function loginUser() {
         // Converting to JSON
         .then((response) => response.json())
             .then(json=>{
-            alert(`email is ${json.email} and password is ${json.password}`)
+            if(json != null && json.email){
+                alert('Successfully Logged in the User !!')
+                location.href = 'homepage.html';
+                alert('Redirecting to Homepage !!');
+            }
+            else{
+                alert("Bad Credentials");
+            }
         })
     alert("Your request is in processing....")
 }
