@@ -143,7 +143,7 @@ function viewExamByDate(){
 
 function viewAllExamsAsc(){
     let myParent = document.getElementById("examdetails");
-    fetch("http://localhost:8082/oaes_layer_war_exploded/api/exam/viewAllAsc", {
+    fetch("http://localhost:8091/getExamsInAsc", {
         // Adding method type
         method: "get",
         // Adding headers to the request
@@ -159,8 +159,8 @@ function viewAllExamsAsc(){
             let list = json;
             let array = [];
             for(let i=0;i<list.length;i++){
-                let dt = new Date(list[i].exam_date);
-                array.push(list[i].exam_code  + "  " + list[i].exam_name + "  " + dt.getDate()+"/"+dt.getMonth() +"/"+dt.getFullYear()+  "  " + list[i].start_time + "  " + list[i].end_time);
+                let dt = new Date(list[i].examDate);
+                array.push(list[i].examId+"  "+list[i].examCode  + "  " + list[i].examName + "  " + dt.getDate()+"/"+dt.getMonth() +"/"+dt.getFullYear()+  "  " + list[i].startTime + "  " + list[i].endTime);
             }
             let selectList = document.createElement("select");
             selectList.id = "prerequisites";
@@ -178,7 +178,7 @@ function viewAllExamsAsc(){
 
 function viewAllExamsDesc(){
     let myParent = document.getElementById("examdetails");
-    fetch("http://localhost:8082/oaes_layer_war_exploded/api/exam/viewAllDesc", {
+    fetch("http://localhost:8091/getExamsInDesc", {
         // Adding method type
         method: "get",
         // Adding headers to the request
@@ -194,8 +194,8 @@ function viewAllExamsDesc(){
             let list = json;
             let array = [];
             for(let i=0;i<list.length;i++){
-                let dt = new Date(list[i].exam_date);
-                array.push(list[i].exam_code  + "  " + list[i].exam_name + "  " + dt.getDate()+"/"+dt.getMonth() +"/"+dt.getFullYear()+  "  " + list[i].start_time + "  " + list[i].end_time);
+                let dt = new Date(list[i].examDate);
+                array.push(list[i].examId+"  "+list[i].examCode  + "  " + list[i].examName + "  " + dt.getDate()+"/"+dt.getMonth() +"/"+dt.getFullYear()+  "  " + list[i].startTime + "  " + list[i].endTime);
             }
             let selectList = document.createElement("select");
             selectList.id = "prerequisites";
