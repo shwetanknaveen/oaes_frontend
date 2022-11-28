@@ -100,16 +100,16 @@ function viewExamByDate(){
     let temp = JSON.parse(document.cookie);
     let start = temp.start;
     let end = temp.end;
-    let obj = {
-        start_time: start,
-        end_time : end
-    };
+    // let obj = {
+    //     start_time: start,
+    //     end_time : end
+    // };
     // Send to Backend
-    fetch("http://localhost:8082/oaes_layer_war_exploded/api/exam/viewExamByDate", {
+    fetch("http://localhost:8091/getExamsBetween?startDate="+start+"&endDate="+end, {
         // Adding method type
-        method: "POST",
+        method: "GET",
         // Adding body or contents to send
-        body: JSON.stringify(obj),
+        // body: JSON.stringify(obj),
         // Adding headers to the request
         headers: {
             "Content-type": "application/json; charset=UTF-8",
@@ -124,8 +124,8 @@ function viewExamByDate(){
             let list = json;
             let array = [];
             for(let i=0;i<list.length;i++){
-                let dt = new Date(list[i].exam_date);
-                array.push(list[i].exam_code  + "  " + list[i].exam_name + "  " + dt.getDate()+"/"+dt.getMonth() +"/"+dt.getFullYear()+  "  " + list[i].start_time + "  " + list[i].end_time);
+                let dt = new Date(list[i].examDate);
+                array.push(list[i].examId+"  "+list[i].examCode  + "  " + list[i].examName + "  " + dt.getDate()+"/"+dt.getMonth() +"/"+dt.getFullYear()+  "  " + list[i].startTime + "  " + list[i].endTime);
             }
             let selectList = document.createElement("select");
             selectList.id = "prerequisites";
