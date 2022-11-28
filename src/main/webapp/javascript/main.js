@@ -386,7 +386,7 @@ function editExamInDatabase() {
     // Send to Backend
     fetch("http://localhost:8090/updateExam", {
         // Adding method type
-        method: "POST",
+        method: "PUT",
         // Adding body or contents to send
         body: JSON.stringify(obj),
         // Adding headers to the request
