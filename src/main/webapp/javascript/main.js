@@ -308,7 +308,11 @@ function registerUser() {
         email: email,
     };
     // Send to Backend
-    fetch("http://localhost:8092/addUser", {
+    //fetch("http://localhost:8092/addUser", {
+
+    //THE FOLLOWING CALL IS NOW WORKING WHEN ANOTHER APPLICATION IS WRITTEN FOR GATEWAY SERVICE
+    //RATHER THAN WRITING GATEWAY CONTROLLER IN EUREKA SERVER ITSELF
+    fetch("http://localhost:8095/gateway/user/addUser", {    //test for eureka server
         // Adding method type
         method: "POST",
         // Adding body or contents to send
